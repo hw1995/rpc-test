@@ -85,7 +85,7 @@ public class Huaxi {
     verifyGetRemoteService(interfaceClass, host, port);
     return (T) Proxy.newProxyInstance(interfaceClass.getClassLoader(), new Class<?>[]{interfaceClass}, (Object proxy, Method method, Object[] args) -> {
       Socket socket = new Socket(host, port);
-      System.out.println("get remote service :" + interfaceClass.getName()+"from "+host+":"+port);
+      System.out.println("get remote service :" + interfaceClass.getName()+" from "+host+":"+port);
 
       ObjectOutputStream output = new ObjectOutputStream(socket.getOutputStream());
       output.writeUTF(method.getName());
